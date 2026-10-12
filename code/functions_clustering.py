@@ -6,7 +6,12 @@ import numpy as np
 from math import pi
 from scipy import stats, spatial, optimize
 
+import textwrap
+
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from matplotlib.patches import Rectangle
+from mplsoccer import Radar, grid as mplgrid
 
 from itertools import combinations
 
@@ -20,6 +25,8 @@ from IPython.display import display
 keys = ["player_id", "team_id", "position_group"]
 
 suffix_labels = {'': 'raw', '_adj': 'adj', '_subcluster_adj': 'subcluster_adj'}
+
+value_labels = {'': 'raw values', '_adj': 'adjusted values', '_subcluster_adj': 'sub-cluster adjusted values'}
 
 def safe_name(division):
     return division.replace(' ', '_')  # matches what you originally saved with
@@ -621,6 +628,9 @@ def _series_for(source, features, suffix):  # no default, no special-casing — 
 def suffix_label(suffix):
     return suffix_labels.get(suffix, suffix.lstrip('_'))
 
+def value_label_for(suffix):
+    return value_labels.get(suffix, suffix.lstrip('_').replace('_', ' ') + ' values')
+
 def pca_top_features(pca, feature_names, n_top=8):
     """Top n_top raw features per retained component, by |loading|, sign preserved."""
     loadings = pca.components_
@@ -826,94 +836,222 @@ def chunk_features(feature_list, max_features_per_plot, radar_sets=None, prefix=
         chart_names.append(key)
     return chart_names
 
-def save_radar_chart(fig, position, n_clusters, folder_name, chart_name, base_dir='radar_charts'):
-    folder = os.path.join(base_dir, position, f'k{n_clusters}', folder_name)
-    os.makedirs(folder, exist_ok=True)
+surface, ink, ink2, muted, grid_colour = "#fcfcfb", "#0b0b0b", "#52514e", "#898781", "#e1e0d9"
+slots = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
+player_fig_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "radar_plots")
 
-    filepath = os.path.join(folder, f'{chart_name}.png')
-    fig.savefig(filepath, dpi=150, bbox_inches='tight')
+def _text_on(colour):
+    """ink or surface, whichever reads better on this fill colour."""
+    r, g, b = [c / 255 for c in bytes.fromhex(colour.lstrip("#"))]
+    lin = lambda c: c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    lum = 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b)
+    return surface if (1.05 / (lum + 0.05)) >= ((lum + 0.05) / 0.05) else ink
+
+# def save_radar_chart(fig, position, n_clusters, folder_name, chart_name, base_dir='radar_charts'):
+#     folder = os.path.join(base_dir, position, f'k{n_clusters}', folder_name)
+#     os.makedirs(folder, exist_ok=True)
+
+#     filepath = os.path.join(folder, f'{chart_name}.png')
+#     fig.savefig(filepath, dpi=150, bbox_inches='tight')
+#     plt.close(fig)
+#     return filepath
+
+def save_radar_chart(fig, position, n_clusters, folder_name, chart_name, base_dir=player_fig_dir):
+    """Same as your previous version; only the default folder changed (main/radar_plots)."""
+    folder = os.path.join(base_dir, str(position), f"k{n_clusters}", folder_name or "")
+    os.makedirs(folder, exist_ok=True)
+    filepath = os.path.join(folder, f"{chart_name}.png")
+    fig.savefig(filepath, dpi=150, bbox_inches="tight")
     plt.close(fig)
     return filepath
 
-def _draw_similarity_strip(fig, similarity_scores, highlight_label=None, label_threshold=0.06):
-    labels = list(similarity_scores.keys())
-    values = list(similarity_scores.values())
-    strip_colors = plt.cm.Set2.colors
+# def _draw_similarity_strip(fig, similarity_scores, highlight_label=None, label_threshold=0.06):
+#     labels = list(similarity_scores.keys())
+#     values = list(similarity_scores.values())
+#     strip_colors = plt.cm.Set2.colors
 
-    strip_ax = fig.add_axes([0.12, 0.83, 0.76, 0.08])  # slightly taller than before, for the callouts
-    strip_ax.set_xlim(0, 1)
-    strip_ax.set_ylim(-1.6, 1.6)  # extra vertical room above/below the bar itself
-    strip_ax.axis('off')
+#     strip_ax = fig.add_axes([0.12, 0.83, 0.76, 0.08])  # slightly taller than before, for the callouts
+#     strip_ax.set_xlim(0, 1)
+#     strip_ax.set_ylim(-1.6, 1.6)  # extra vertical room above/below the bar itself
+#     strip_ax.axis('off')
 
-    left = 0
-    callout_side = 1  # alternates above (+1) / below (-1) for consecutive narrow segments
+#     left = 0
+#     callout_side = 1  # alternates above (+1) / below (-1) for consecutive narrow segments
+#     for i, (label, val) in enumerate(zip(labels, values)):
+#         color = strip_colors[i % len(strip_colors)]
+#         is_hers = (label == highlight_label)
+#         center = left + val / 2
+
+#         strip_ax.barh(0.5, val, left=left, height=1.0, color=color,
+#                       edgecolor='black' if is_hers else 'white',
+#                       linewidth=2.0 if is_hers else 0.5)
+
+#         text = f"{label}\n{val:.0%}"
+#         if val >= label_threshold:
+#             strip_ax.text(center, 0.5, text, ha='center', va='center', fontsize=6,
+#                           fontweight='bold' if is_hers else 'normal')
+#         else:
+#             y_edge = 1.0 if callout_side > 0 else 0.0
+#             y_label = 1.45 if callout_side > 0 else -0.45
+#             strip_ax.plot([center, center], [y_edge, y_label], color='gray', linewidth=0.6, zorder=1)
+#             strip_ax.text(center, y_label + (0.1 if callout_side > 0 else -0.1), text,
+#                           ha='center', va='bottom' if callout_side > 0 else 'top',
+#                           fontsize=6, fontweight='bold' if is_hers else 'normal')
+#             callout_side *= -1  # next narrow segment goes the opposite direction
+
+#         left += val
+
+def _draw_similarity_strip(fig, similarity_scores, highlight_label=None, label_threshold=0.15,
+                           rect=(0.12, 0.83, 0.76, 0.08), colors=None):
+    labels, values = list(similarity_scores.keys()), list(similarity_scores.values())
+    colors = colors or slots
+    strip_ax = fig.add_axes(list(rect))
+    strip_ax.set_xlim(0, 1); strip_ax.set_ylim(-1.6, 1.6); strip_ax.axis("off")
+    left, callout_side = 0.0, 1
     for i, (label, val) in enumerate(zip(labels, values)):
-        color = strip_colors[i % len(strip_colors)]
         is_hers = (label == highlight_label)
         center = left + val / 2
-
-        strip_ax.barh(0.5, val, left=left, height=1.0, color=color,
-                      edgecolor='black' if is_hers else 'white',
-                      linewidth=2.0 if is_hers else 0.5)
-
-        text = f"{label}\n{val:.0%}"
+        fill = colors[i % len(colors)]
+        strip_ax.barh(0.5, val, left=left, height=1.0, color=fill,
+                      edgecolor=ink if is_hers else surface, linewidth=2.0 if is_hers else 0.8)
+        text = f"{label} · {val:.0%}"                                   # one line, fits inside the bar
         if val >= label_threshold:
-            strip_ax.text(center, 0.5, text, ha='center', va='center', fontsize=6,
-                          fontweight='bold' if is_hers else 'normal')
+            strip_ax.text(center, 0.5, text, ha="center", va="center", fontsize=7.5, color=_text_on(fill),
+                          fontweight="bold" if is_hers else "normal")
         else:
             y_edge = 1.0 if callout_side > 0 else 0.0
             y_label = 1.45 if callout_side > 0 else -0.45
-            strip_ax.plot([center, center], [y_edge, y_label], color='gray', linewidth=0.6, zorder=1)
-            strip_ax.text(center, y_label + (0.1 if callout_side > 0 else -0.1), text,
-                          ha='center', va='bottom' if callout_side > 0 else 'top',
-                          fontsize=6, fontweight='bold' if is_hers else 'normal')
-            callout_side *= -1  # next narrow segment goes the opposite direction
-
+            strip_ax.plot([center, center], [y_edge, y_label], color=muted, linewidth=0.6, zorder=1)
+            strip_ax.text(center, y_label + (0.1 if callout_side > 0 else -0.1), text, ha="center",
+                          va="bottom" if callout_side > 0 else "top", fontsize=6.5, color=ink,
+                          fontweight="bold" if is_hers else "normal")
+            callout_side *= -1
         left += val
+    return strip_ax
 
-def build_radar_chart(feature_list, pct_series_dict, title, raw_series_dict=None, fmt='.2f',
-                       save=False, position=None, n_clusters=None, folder_name=None, chart_name=None,
-                       similarity_scores=None, highlight_label=None):
+# def build_radar_chart(feature_list, pct_series_dict, title, raw_series_dict=None, fmt='.2f',
+#                        save=False, position=None, n_clusters=None, folder_name=None, chart_name=None,
+#                        similarity_scores=None, highlight_label=None):
+#     N = len(feature_list)
+#     angles = [n / float(N) * 2 * pi for n in range(N)]
+#     angles += angles[:1]
+
+#     has_strip = similarity_scores is not None
+#     fig = plt.figure(figsize=(7, 8.2 if has_strip else 7.4))  # extra height for the legend now, too
+#     polar_rect = [0.1, 0.12, 0.8, 0.69] if has_strip else [0.1, 0.12, 0.8, 0.78]
+#     ax = fig.add_axes(polar_rect, projection='polar')
+
+#     colors = plt.cm.tab10.colors
+#     lw = 1.5
+
+#     for i, (label, pct_vals) in enumerate(pct_series_dict.items()):
+#         norm_vals = [pct_vals[f] / 100 for f in feature_list]
+#         norm_vals += norm_vals[:1]
+
+#         is_baseline = (i == 0)
+#         color = 'gray' if is_baseline else colors[(i - 1) % len(colors)]
+
+#         ax.plot(angles, norm_vals, label=label, linewidth=lw, color=color)
+#         if is_baseline:
+#             ax.fill(angles, norm_vals, alpha=0.08, color=color)
+
+#         annotate_vals = raw_series_dict[label] if raw_series_dict else pct_vals
+#         for angle, norm_val, feat in zip(angles[:-1], norm_vals[:-1], feature_list):
+#             ax.annotate(f"{annotate_vals[feat]:{fmt}}", xy=(angle, norm_val),
+#                         fontsize=7, color=color, ha='center', va='bottom')
+
+#     ax.set_xticks(angles[:-1])
+#     ax.set_xticklabels(feature_list, fontsize=8)
+#     ax.set_yticklabels([])
+
+#     # below the plot now, not above-right -- guaranteed clear of the strip regardless of
+#     # how many series or how long the labels are, since nothing else occupies this space
+#     ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.08), fontsize=9)
+
+#     fig.suptitle(title, y=0.97, fontsize=13)
+#     if has_strip:
+#         _draw_similarity_strip(fig, similarity_scores, highlight_label)
+
+#     if save:
+#         return save_radar_chart(fig, position, n_clusters, folder_name, chart_name)
+#     plt.show()
+
+def build_radar_chart(feature_list, pct_series_dict, title, raw_series_dict=None, fmt='.3f',
+                      save=False, position=None, n_clusters=None, folder_name=None, chart_name=None,
+                      similarity_scores=None, highlight_label=None, annotate='auto', value_label=None):
     N = len(feature_list)
-    angles = [n / float(N) * 2 * pi for n in range(N)]
-    angles += angles[:1]
-
+    params = [str(f).replace("_per_game", "").replace("_", " ") for f in feature_list]
+    radar = Radar(params, [0] * N, [100] * N, round_int=[True] * N, num_rings=4, ring_width=1,
+                  center_circle_radius=1)
     has_strip = similarity_scores is not None
-    fig = plt.figure(figsize=(7, 8.2 if has_strip else 7.4))  # extra height for the legend now, too
-    polar_rect = [0.1, 0.12, 0.8, 0.69] if has_strip else [0.1, 0.12, 0.8, 0.78]
-    ax = fig.add_axes(polar_rect, projection='polar')
-
-    colors = plt.cm.tab10.colors
-    lw = 1.5
-
-    for i, (label, pct_vals) in enumerate(pct_series_dict.items()):
-        norm_vals = [pct_vals[f] / 100 for f in feature_list]
-        norm_vals += norm_vals[:1]
-
-        is_baseline = (i == 0)
-        color = 'gray' if is_baseline else colors[(i - 1) % len(colors)]
-
-        ax.plot(angles, norm_vals, label=label, linewidth=lw, color=color)
-        if is_baseline:
-            ax.fill(angles, norm_vals, alpha=0.08, color=color)
-
-        annotate_vals = raw_series_dict[label] if raw_series_dict else pct_vals
-        for angle, norm_val, feat in zip(angles[:-1], norm_vals[:-1], feature_list):
-            ax.annotate(f"{annotate_vals[feat]:{fmt}}", xy=(angle, norm_val),
-                        fontsize=7, color=color, ha='center', va='bottom')
-
-    ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(feature_list, fontsize=8)
-    ax.set_yticklabels([])
-
-    # below the plot now, not above-right -- guaranteed clear of the strip regardless of
-    # how many series or how long the labels are, since nothing else occupies this space
-    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.08), fontsize=9)
-
-    fig.suptitle(title, y=0.97, fontsize=13)
+    fig, axs = mplgrid(figheight=9.6, grid_height=0.74 if has_strip else 0.80,
+                       title_height=0.16 if has_strip else 0.08, endnote_height=0.06,
+                       title_space=0, endnote_space=0, grid_key="radar", axis=False)
+    fig.set_facecolor(surface)
+    ax = axs["radar"]
+    radar.setup_axis(ax=ax, facecolor=surface)
+    radar.draw_circles(ax=ax, facecolor="#f3f2ef", edgecolor=grid_colour, linewidth=1)
+ 
+    labels = list(pct_series_dict)
+    first_is_baseline = len(labels) > 1 and "avg" in str(labels[0]).lower()
+    strip_keys = list(similarity_scores) if has_strip else []
+    focus_colour = slots[strip_keys.index(highlight_label) % len(slots)] if highlight_label in strip_keys else None
+    do_annotate = (len(labels) <= 2) if annotate == 'auto' else bool(annotate)
+ 
+    # 1) draw every series, remember where its points are
+    handles, drawn, c_idx = [], [], 0
+    for i, label in enumerate(labels):
+        pct_vals = pct_series_dict[label]
+        vals = [float(pct_vals[f]) if np.isfinite(float(pct_vals[f])) else 0.0 for f in feature_list]
+        if i == 0 and first_is_baseline:
+            _, verts = radar.draw_radar_solid(vals, ax=ax, kwargs=dict(facecolor=muted, alpha=0.22,
+                                                                       edgecolor=muted, linewidth=1.5))
+            handles.append(Rectangle((0, 0), 1, 1, facecolor=muted, alpha=0.4, label=label))
+            colour = muted
+        else:
+            colour = focus_colour if (focus_colour and first_is_baseline) else slots[c_idx % len(slots)]
+            c_idx += 1
+            _, verts = radar.draw_radar_solid(vals, ax=ax, kwargs=dict(facecolor="none", edgecolor=colour,
+                                                                       linewidth=2.2, zorder=4))
+            ax.scatter(verts[:, 0], verts[:, 1], s=22, color=colour, edgecolor=surface, linewidth=1, zorder=5)
+            handles.append(Line2D([0], [0], color=colour, linewidth=2.2, label=label))
+        drawn.append((label, np.asarray(vals), verts, colour))
+ 
+    # 2) numbers: the higher point's number goes outside, the lower one's inside (away from each other);
+    #    when two points are within 10 percentile points, the numbers also step sideways.
+    #    Each number's box is outlined in its series' colour, so it is clear which line it belongs to.
+    if do_annotate:
+        stack = np.vstack([d[1] for d in drawn])
+        for s, (label, vals, verts, colour) in enumerate(drawn):
+            annotate_vals = raw_series_dict[label] if raw_series_dict else pct_series_dict[label]
+            for j, ((x, y), feat) in enumerate(zip(verts, feature_list)):
+                r = np.hypot(x, y) or 1.0
+                ux, uy = x / r, y / r
+                others = np.delete(stack[:, j], s)
+                outward = len(others) == 0 or vals[j] >= others.max()
+                push = 0.5 if outward else -0.5
+                close = len(others) > 0 and np.min(np.abs(others - vals[j])) < 10
+                side = (0.4 if s % 2 == 0 else -0.4) if close else 0.0
+                v = annotate_vals[feat]
+                ax.text(x + push * ux - side * uy, y + push * uy + side * ux,
+                        "n/a" if not np.isfinite(float(v)) else f"{v:{fmt}}", ha="center", va="center",
+                        fontsize=7, color=ink, zorder=6,
+                        bbox=dict(boxstyle="round,pad=0.15", facecolor=surface, edgecolor=colour,
+                                  linewidth=1.0, alpha=0.9))
+ 
+    radar.draw_param_labels(ax=ax, fontsize=8.5, color=ink2, wrap=18)
+    t = axs["title"]
+    t.text(0.01, 0.97, "\n".join(textwrap.wrap(title, 70)), fontsize=12.5, fontweight="bold", color=ink,
+           va="top", ha="left")
+    note = "Rings at the 25th / 50th / 75th / 100th percentile."
+    if do_annotate and raw_series_dict:
+        note += f" Numbers = {value_label or 'the values behind each point'} (box colour = series)."
+    t.text(0.01, 0.70 if has_strip else 0.30, note, fontsize=8, color=muted, va="top", ha="left")
     if has_strip:
-        _draw_similarity_strip(fig, similarity_scores, highlight_label)
-
+        pos = t.get_position()
+        _draw_similarity_strip(fig, similarity_scores, highlight_label,
+                               rect=(pos.x0 + 0.08 * pos.width, pos.y0, 0.84 * pos.width, 0.45 * pos.height))
+    axs["endnote"].legend(handles=handles, loc="center", ncol=min(3, len(handles)), fontsize=8.5, frameon=False)
     if save:
         return save_radar_chart(fig, position, n_clusters, folder_name, chart_name)
     plt.show()
@@ -929,7 +1067,7 @@ def plot_cluster_comparison(chart_name, radar_sets, stats_df, column_name='clust
 
     build_radar_chart(features, pct_dict,
                        f'{chart_name.title()} — {column_name} comparison ({"raw" if suffix == "" else suffix})',
-                       raw_series_dict=raw_dict)
+                       raw_series_dict=raw_dict, value_label=value_label_for(suffix))
 
 def plot_player_vs_cluster(chart_name, radar_sets, player_id, team_id, stats_df, player_id_to_player,
                             team_id_to_team, column_name='cluster', suffix='_adj', n_clusters=None):
@@ -955,7 +1093,7 @@ def plot_player_vs_cluster(chart_name, radar_sets, player_id, team_id, stats_df,
     build_radar_chart(features, pct_dict,
                        f'{chart_name.title()} — {display_name} ({"raw" if suffix == "" else suffix})',
                        raw_series_dict=raw_dict,
-                       similarity_scores=similarity_scores, highlight_label=highlight_label)
+                       similarity_scores=similarity_scores, highlight_label=highlight_label, value_label=value_label_for(suffix))
 
 def plot_player_vs_league_cluster(chart_name, radar_sets, player_id, team_id, stats_df, player_id_to_player,
                                    team_id_to_team, column_name='cluster', suffix='_adj', n_clusters=None):
@@ -983,7 +1121,7 @@ def plot_player_vs_league_cluster(chart_name, radar_sets, player_id, team_id, st
     build_radar_chart(features, pct_dict,
                        f'{chart_name.title()} — {display_name} vs {league} peers ({"raw" if suffix == "" else suffix})',
                        raw_series_dict=raw_dict,
-                       similarity_scores=similarity_scores, highlight_label=highlight_label)
+                       similarity_scores=similarity_scores, highlight_label=highlight_label, value_label=value_label_for(suffix))
 
 def export_cluster_comparison_charts(stats_df, position, n_clusters, chart_names, radar_sets,
                                       column_name='cluster', suffixes=('_adj', '')):
@@ -1008,7 +1146,7 @@ def export_cluster_comparison_charts(stats_df, position, n_clusters, chart_names
                 f'{chart_name.title()} — {column_name} comparison ({suffix_label(suffix)})',
                 raw_series_dict=raw_dict,
                 save=True, position=position, n_clusters=n_clusters,
-                folder_name='', chart_name=f'{chart_name}{file_tag}'
+                folder_name='', chart_name=f'{chart_name}{file_tag}', value_label=value_label_for(suffix)
             )
 
 def export_cluster_comparison_charts_by_league(stats_df, position, n_clusters, chart_names, radar_sets,
@@ -1038,7 +1176,7 @@ def export_cluster_comparison_charts_by_league(stats_df, position, n_clusters, c
                     f'{chart_name.title()} — {column_name} comparison ({league}, {suffix_label(suffix)})',
                     raw_series_dict=raw_dict,
                     save=True, position=position, n_clusters=n_clusters,
-                    folder_name='', chart_name=f'{chart_name}{file_tag}_{safe_league}'
+                    folder_name='', chart_name=f'{chart_name}{file_tag}_{safe_league}', value_label=value_label_for(suffix)
                 )
 
 def export_all_player_charts(stats_df, position, n_clusters, chart_names, radar_sets, cluster_col,
@@ -1075,7 +1213,7 @@ def export_all_player_charts(stats_df, position, n_clusters, chart_names, radar_
                     raw_series_dict={f'Cluster {cluster_id} avg': cluster_raw, display_name: player_raw},
                     save=True, position=position, n_clusters=n_clusters,
                     folder_name=folder_name, chart_name=f'{chart_name}{file_tag}',
-                    similarity_scores=similarity_scores, highlight_label=highlight_label,
+                    similarity_scores=similarity_scores, highlight_label=highlight_label, value_label=value_label_for(suffix)
                 )
 
 def export_all_player_charts_league_aware(stats_df, position, n_clusters, chart_names, radar_sets, cluster_col,
@@ -1112,7 +1250,7 @@ def export_all_player_charts_league_aware(stats_df, position, n_clusters, chart_
                     raw_series_dict={f'Cluster {cluster_id} avg ({league})': cluster_raw, display_name: player_raw},
                     save=True, position=position, n_clusters=n_clusters,
                     folder_name=folder_name, chart_name=f'{chart_name}{file_tag}_league_relative',
-                    similarity_scores=similarity_scores, highlight_label=highlight_label,
+                    similarity_scores=similarity_scores, highlight_label=highlight_label, value_label=value_label_for(suffix)
                 )
 
 def match_clusters(centroids_a, centroids_b):
