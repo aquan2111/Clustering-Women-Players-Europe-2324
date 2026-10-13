@@ -245,7 +245,7 @@ While most of k = 2 cluster 1 is converted into k = 3 cluster 0, k = 2 cluster 0
 Hence, the following conclusions can be made:
 
 - Similar to k = 2 cluster 1, k = 3 cluster 0 forwards can be seen as advanced pressing forwards.
-- Cluster 1 forwards can be interpreted as poachers whose goal was focused only on finishing chances.
+- Cluster 1 forwards can be interpreted as poachers, although their movements are more varied.
 - While cluster 2 forwards can be seen as target forwards.
 
 <a id="breakdown-of-results-by-players"></a>
