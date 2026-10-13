@@ -1,6 +1,6 @@
 # **Caroline Graham Hansen - Barcelona**
 
-<div align="left"><a href="wingers.pdf" style="color:black">← Back to Wingers</a></div>
+<div align="left"><a href="wingers.md" style="color:black">← Back to Wingers</a></div>
 
 <a id="table-of-contents"></a>
 

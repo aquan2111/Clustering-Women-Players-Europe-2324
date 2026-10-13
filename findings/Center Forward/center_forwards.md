@@ -14,13 +14,13 @@
     - <a href="#comparing-results-for-2-clusters-against-3-clusters" style="color:black">Comparing results for 2 clusters against 3 clusters</a>
     - <a href="#results-for-3-clusters-breakdown-of-results-by-features" style="color:black">Breakdown of results by features</a>
   - <a href="#breakdown-of-results-by-players" style="color:black">Breakdown of results by players</a>
-    - <a href="center_forwards_Mayra_Tatiana_Ramírez_Ramírez_Levante_UD_Femenino.pdf" style="color:black">Mayra Ramirez - Levante</a>
-    - <a href="center_forwards_Mayra_Tatiana_Ramírez_Ramírez_Chelsea_FCW.pdf" style="color:black">Mayra Ramirez - Chelsea</a>
-    - <a href="center_forwards_Gabriela_Nunes_da_Silva_Levante_UD_Femenino.pdf" style="color:black">Gabi Nunes - Levante</a>
-    - <a href="center_forwards_Rachel_Daly_Aston_Villa_W.pdf" style="color:black">Rachel Daly - Aston Villa</a>
-    - <a href="center_forwards_Khadija_Monifa_Shaw_Manchester_City_WFC.pdf" style="color:black">Khadija Shaw - Manchester City</a>
-    - <a href="center_forwards_Alba_María_Redondo_Ferrer_Levante_UD_Femenino.pdf" style="color:black">Alba Redondo - Levante</a>
-    - <a href="center_forwards_Andrea_Stašková_AC_Milan_W.pdf" style="color:black">Andrea Staskova - AC Milan</a>
+    - <a href="center_forwards_Mayra_Tatiana_Ramírez_Ramírez_Levante_UD_Femenino.md" style="color:black">Mayra Ramirez - Levante</a>
+    - <a href="center_forwards_Mayra_Tatiana_Ramírez_Ramírez_Chelsea_FCW.md" style="color:black">Mayra Ramirez - Chelsea</a>
+    - <a href="center_forwards_Gabriela_Nunes_da_Silva_Levante_UD_Femenino.md" style="color:black">Gabi Nunes - Levante</a>
+    - <a href="center_forwards_Rachel_Daly_Aston_Villa_W.md" style="color:black">Rachel Daly - Aston Villa</a>
+    - <a href="center_forwards_Khadija_Monifa_Shaw_Manchester_City_WFC.md" style="color:black">Khadija Shaw - Manchester City</a>
+    - <a href="center_forwards_Alba_María_Redondo_Ferrer_Levante_UD_Femenino.md" style="color:black">Alba Redondo - Levante</a>
+    - <a href="center_forwards_Andrea_Stašková_AC_Milan_W.md" style="color:black">Andrea Staskova - AC Milan</a>
 - <a href="#appendix" style="color:black">Appendix</a>
   - <a href="#radar-plots-for-2-clusters-center-forwards-averages" style="color:black">Radar plots for 2 clusters center forwards' averages</a>
     - <a href="#radar-plots-for-2-clusters-center-forwards-averages-all-leagues" style="color:black">All leagues</a>
@@ -254,13 +254,13 @@ Hence, the following conclusions can be made:
 
 Findings and radar plots for each center forward are in their own files:
 
-- <a href="center_forwards_Mayra_Tatiana_Ramírez_Ramírez_Levante_UD_Femenino.pdf" style="color:black">Mayra Ramirez - Levante</a>
-- <a href="center_forwards_Mayra_Tatiana_Ramírez_Ramírez_Chelsea_FCW.pdf" style="color:black">Mayra Ramirez - Chelsea</a>
-- <a href="center_forwards_Gabriela_Nunes_da_Silva_Levante_UD_Femenino.pdf" style="color:black">Gabi Nunes - Levante</a>
-- <a href="center_forwards_Rachel_Daly_Aston_Villa_W.pdf" style="color:black">Rachel Daly - Aston Villa</a>
-- <a href="center_forwards_Khadija_Monifa_Shaw_Manchester_City_WFC.pdf" style="color:black">Khadija Shaw - Manchester City</a>
-- <a href="center_forwards_Alba_María_Redondo_Ferrer_Levante_UD_Femenino.pdf" style="color:black">Alba Redondo - Levante</a>
-- <a href="center_forwards_Andrea_Stašková_AC_Milan_W.pdf" style="color:black">Andrea Staskova - AC Milan</a>
+- <a href="center_forwards_Mayra_Tatiana_Ramírez_Ramírez_Levante_UD_Femenino.md" style="color:black">Mayra Ramirez - Levante</a>
+- <a href="center_forwards_Mayra_Tatiana_Ramírez_Ramírez_Chelsea_FCW.md" style="color:black">Mayra Ramirez - Chelsea</a>
+- <a href="center_forwards_Gabriela_Nunes_da_Silva_Levante_UD_Femenino.md" style="color:black">Gabi Nunes - Levante</a>
+- <a href="center_forwards_Rachel_Daly_Aston_Villa_W.md" style="color:black">Rachel Daly - Aston Villa</a>
+- <a href="center_forwards_Khadija_Monifa_Shaw_Manchester_City_WFC.md" style="color:black">Khadija Shaw - Manchester City</a>
+- <a href="center_forwards_Alba_María_Redondo_Ferrer_Levante_UD_Femenino.md" style="color:black">Alba Redondo - Levante</a>
+- <a href="center_forwards_Andrea_Stašková_AC_Milan_W.md" style="color:black">Andrea Staskova - AC Milan</a>
 
 <div style="page-break-before: always; break-before: page;"></div>
 

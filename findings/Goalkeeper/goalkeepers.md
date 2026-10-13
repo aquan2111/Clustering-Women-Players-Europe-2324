@@ -14,11 +14,11 @@
     - <a href="#comparing-results-for-2-clusters-against-3-clusters" style="color:black">Comparing results for 2 clusters against 3 clusters</a>
     - <a href="#results-for-3-clusters-breakdown-of-results-by-features" style="color:black">Breakdown of results by features</a>
   - <a href="#breakdown-of-results-by-players" style="color:black">Breakdown of results by players</a>
-    - <a href="goalkeepers_Zecira_Musovic_Chelsea_FCW.pdf" style="color:black">Zecira Musovic - Chelsea</a>
-    - <a href="goalkeepers_Hannah_Hampton_Chelsea_FCW.pdf" style="color:black">Hannah Hampton - Chelsea</a>
-    - <a href="goalkeepers_Rebecca_Leigh_Spencer_Tottenham_Hotspur_Women.pdf" style="color:black">Rebecca Leigh Spencer - Tottenham Hotspur</a>
-    - <a href="goalkeepers_Mária_Korenčiová_Como_W.pdf" style="color:black">Maria Korenciova - Como</a>
-    - <a href="goalkeepers_Mary_Alexandra_Earps_Manchester_United_W.pdf" style="color:black">Mary Earps - Manchester United</a>
+    - <a href="goalkeepers_Zecira_Musovic_Chelsea_FCW.md" style="color:black">Zecira Musovic - Chelsea</a>
+    - <a href="goalkeepers_Hannah_Hampton_Chelsea_FCW.md" style="color:black">Hannah Hampton - Chelsea</a>
+    - <a href="goalkeepers_Rebecca_Leigh_Spencer_Tottenham_Hotspur_Women.md" style="color:black">Rebecca Leigh Spencer - Tottenham Hotspur</a>
+    - <a href="goalkeepers_Mária_Korenčiová_Como_W.md" style="color:black">Maria Korenciova - Como</a>
+    - <a href="goalkeepers_Mary_Alexandra_Earps_Manchester_United_W.md" style="color:black">Mary Earps - Manchester United</a>
 - <a href="#appendix" style="color:black">Appendix</a>
   - <a href="#radar-plots-for-2-clusters-goalkeepers-averages" style="color:black">Radar plots for 2 clusters goalkeepers' averages</a>
     - <a href="#radar-plots-for-2-clusters-goalkeepers-averages-fa-womens-super-league" style="color:black">FA Women's Super League</a>
@@ -30,7 +30,6 @@
     - <a href="#radar-plots-for-3-clusters-goalkeepers-averages-frauen-bundesliga" style="color:black">Frauen Bundesliga</a>
     - <a href="#radar-plots-for-3-clusters-goalkeepers-averages-liga-f" style="color:black">Liga F</a>
     - <a href="#radar-plots-for-3-clusters-goalkeepers-averages-serie-a-women" style="color:black">Serie A Women</a>
-
 
 <div style="page-break-before: always; break-before: page;"></div>
 
@@ -217,11 +216,11 @@ However, these results are not robust as number of components are added, so resu
 
 Findings and radar plots for each goalkeeper are in their own files:
 
-- <a href="goalkeepers_Zecira_Musovic_Chelsea_FCW.pdf" style="color:black">Zecira Musovic - Chelsea</a>
-- <a href="goalkeepers_Hannah_Hampton_Chelsea_FCW.pdf" style="color:black">Hannah Hampton - Chelsea</a>
-- <a href="goalkeepers_Rebecca_Leigh_Spencer_Tottenham_Hotspur_Women.pdf" style="color:black">Rebecca Leigh Spencer - Tottenham Hotspur</a>
-- <a href="goalkeepers_Mária_Korenčiová_Como_W.pdf" style="color:black">Maria Korenciova - Como</a>
-- <a href="goalkeepers_Mary_Alexandra_Earps_Manchester_United_W.pdf" style="color:black">Mary Earps - Manchester United</a>
+- <a href="goalkeepers_Zecira_Musovic_Chelsea_FCW.md" style="color:black">Zecira Musovic - Chelsea</a>
+- <a href="goalkeepers_Hannah_Hampton_Chelsea_FCW.md" style="color:black">Hannah Hampton - Chelsea</a>
+- <a href="goalkeepers_Rebecca_Leigh_Spencer_Tottenham_Hotspur_Women.md" style="color:black">Rebecca Leigh Spencer - Tottenham Hotspur</a>
+- <a href="goalkeepers_Mária_Korenčiová_Como_W.md" style="color:black">Maria Korenciova - Como</a>
+- <a href="goalkeepers_Mary_Alexandra_Earps_Manchester_United_W.md" style="color:black">Mary Earps - Manchester United</a>
 
 <div style="page-break-before: always; break-before: page;"></div>
 

@@ -10,10 +10,10 @@
     - <a href="#results-for-2-clusters-breakdown-of-results-by-league" style="color:black">Breakdown of results by league</a>
     - <a href="#results-for-2-clusters-breakdown-of-results-by-features" style="color:black">Breakdown of results by features</a>
   - <a href="#breakdown-of-results-by-players" style="color:black">Breakdown of results by players</a>
-    - <a href="center_midfields_defensive_Sophie_Louise_Ingle_Chelsea_FCW.pdf" style="color:black">Sophie Ingle - Chelsea</a>
-    - <a href="center_midfields_defensive_Kim_Little_Arsenal_WFC.pdf" style="color:black">Kim Little - Arsenal</a>
-    - <a href="center_midfields_defensive_Clare_Wheeler_Everton_LFC.pdf" style="color:black">Clare Wheeler - Everton</a>
-    - <a href="center_midfields_defensive_Lia_Wälti_Arsenal_WFC.pdf" style="color:black">Lia Walti - Arsenal</a>
+    - <a href="center_midfields_defensive_Sophie_Louise_Ingle_Chelsea_FCW.md" style="color:black">Sophie Ingle - Chelsea</a>
+    - <a href="center_midfields_defensive_Kim_Little_Arsenal_WFC.md" style="color:black">Kim Little - Arsenal</a>
+    - <a href="center_midfields_defensive_Clare_Wheeler_Everton_LFC.md" style="color:black">Clare Wheeler - Everton</a>
+    - <a href="center_midfields_defensive_Lia_Wälti_Arsenal_WFC.md" style="color:black">Lia Walti - Arsenal</a>
 - <a href="#appendix" style="color:black">Appendix</a>
   - <a href="#radar-plots-for-2-clusters-center-midfields-averages" style="color:black">Radar plots for 2 clusters center midfields' averages</a>
     - <a href="#radar-plots-for-2-clusters-center-midfields-averages-all-leagues" style="color:black">All leagues</a>
@@ -119,10 +119,10 @@ Therefore, based on these results,
 
 Findings and radar plots for each defensive center midfielder are in their own files:
 
-- <a href="center_midfields_defensive_Sophie_Louise_Ingle_Chelsea_FCW.pdf" style="color:black">Sophie Ingle - Chelsea</a>
-- <a href="center_midfields_defensive_Kim_Little_Arsenal_WFC.pdf" style="color:black">Kim Little - Arsenal</a>
-- <a href="center_midfields_defensive_Clare_Wheeler_Everton_LFC.pdf" style="color:black">Clare Wheeler - Everton</a>
-- <a href="center_midfields_defensive_Lia_Wälti_Arsenal_WFC.pdf" style="color:black">Lia Walti - Arsenal</a>
+- <a href="center_midfields_defensive_Sophie_Louise_Ingle_Chelsea_FCW.md" style="color:black">Sophie Ingle - Chelsea</a>
+- <a href="center_midfields_defensive_Kim_Little_Arsenal_WFC.md" style="color:black">Kim Little - Arsenal</a>
+- <a href="center_midfields_defensive_Clare_Wheeler_Everton_LFC.md" style="color:black">Clare Wheeler - Everton</a>
+- <a href="center_midfields_defensive_Lia_Wälti_Arsenal_WFC.md" style="color:black">Lia Walti - Arsenal</a>
 
 <div style="page-break-before: always; break-before: page;"></div>
 

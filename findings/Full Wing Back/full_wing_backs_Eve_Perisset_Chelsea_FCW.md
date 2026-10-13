@@ -1,6 +1,6 @@
 # **Eve Perisset - Chelsea**
 
-<div align="left"><a href="full_wing_backs.pdf" style="color:black">← Back to Full/Wing Backs</a></div>
+<div align="left"><a href="full_wing_backs.md" style="color:black">← Back to Full/Wing Backs</a></div>
 
 <a id="table-of-contents"></a>
 

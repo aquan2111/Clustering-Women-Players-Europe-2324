@@ -14,13 +14,13 @@
     - <a href="#comparing-results-for-2-clusters-against-3-clusters" style="color:black">Comparing results for 2 clusters against 3 clusters</a>
     - <a href="#results-for-3-clusters-breakdown-of-results-by-features" style="color:black">Breakdown of results by features</a>
   - <a href="#breakdown-of-results-by-players" style="color:black">Breakdown of results by players</a>
-    - <a href="wingers_Caroline_Graham_Hansen_Barcelona_WFC.pdf" style="color:black">Caroline Graham Hansen - Barcelona</a>
-    - <a href="wingers_Carlotta_Wamser_Köln.pdf" style="color:black">Carlotta Wamser - Koln</a>
-    - <a href="wingers_Grace_Clinton_Tottenham_Hotspur_Women.pdf" style="color:black">Grace Clinton - Tottenham Hotspur</a>
-    - <a href="wingers_Jule_Brand_VfL_Wolfsburg_WFC.pdf" style="color:black">Jule Brand - VfL Wolfsburg</a>
-    - <a href="wingers_Klara_Bühl_Bayern_München_W.pdf" style="color:black">Klara Buhl - Bayern Munchen</a>
-    - <a href="wingers_Nikita_Parris_Manchester_United_W.pdf" style="color:black">Nikita Parris - Manchester United</a>
-    - <a href="wingers_Bethany_Mead_Arsenal_WFC.pdf" style="color:black">Beth Mead - Arsenal</a>
+    - <a href="wingers_Caroline_Graham_Hansen_Barcelona_WFC.md" style="color:black">Caroline Graham Hansen - Barcelona</a>
+    - <a href="wingers_Carlotta_Wamser_Köln.md" style="color:black">Carlotta Wamser - Koln</a>
+    - <a href="wingers_Grace_Clinton_Tottenham_Hotspur_Women.md" style="color:black">Grace Clinton - Tottenham Hotspur</a>
+    - <a href="wingers_Jule_Brand_VfL_Wolfsburg_WFC.md" style="color:black">Jule Brand - VfL Wolfsburg</a>
+    - <a href="wingers_Klara_Bühl_Bayern_München_W.md" style="color:black">Klara Buhl - Bayern Munchen</a>
+    - <a href="wingers_Nikita_Parris_Manchester_United_W.md" style="color:black">Nikita Parris - Manchester United</a>
+    - <a href="wingers_Bethany_Mead_Arsenal_WFC.md" style="color:black">Beth Mead - Arsenal</a>
 - <a href="#appendix" style="color:black">Appendix</a>
   - <a href="#radar-plots-for-2-clusters-wingers-averages" style="color:black">Radar plots for 2 clusters wingers' averages</a>
     - <a href="#radar-plots-for-2-clusters-wingers-averages-all-leagues" style="color:black">All leagues</a>
@@ -254,13 +254,13 @@ Following all the information, the following conclusions can be made:
 
 Findings and radar plots for each winger are in their own files:
 
-- <a href="wingers_Caroline_Graham_Hansen_Barcelona_WFC.pdf" style="color:black">Caroline Graham Hansen - Barcelona</a>
-- <a href="wingers_Carlotta_Wamser_Köln.pdf" style="color:black">Carlotta Wamser - Koln</a>
-- <a href="wingers_Grace_Clinton_Tottenham_Hotspur_Women.pdf" style="color:black">Grace Clinton - Tottenham Hotspur</a>
-- <a href="wingers_Jule_Brand_VfL_Wolfsburg_WFC.pdf" style="color:black">Jule Brand - VfL Wolfsburg</a>
-- <a href="wingers_Klara_Bühl_Bayern_München_W.pdf" style="color:black">Klara Buhl - Bayern Munchen</a>
-- <a href="wingers_Nikita_Parris_Manchester_United_W.pdf" style="color:black">Nikita Parris - Manchester United</a>
-- <a href="wingers_Bethany_Mead_Arsenal_WFC.pdf" style="color:black">Beth Mead - Arsenal</a>
+- <a href="wingers_Caroline_Graham_Hansen_Barcelona_WFC.md" style="color:black">Caroline Graham Hansen - Barcelona</a>
+- <a href="wingers_Carlotta_Wamser_Köln.md" style="color:black">Carlotta Wamser - Koln</a>
+- <a href="wingers_Grace_Clinton_Tottenham_Hotspur_Women.md" style="color:black">Grace Clinton - Tottenham Hotspur</a>
+- <a href="wingers_Jule_Brand_VfL_Wolfsburg_WFC.md" style="color:black">Jule Brand - VfL Wolfsburg</a>
+- <a href="wingers_Klara_Bühl_Bayern_München_W.md" style="color:black">Klara Buhl - Bayern Munchen</a>
+- <a href="wingers_Nikita_Parris_Manchester_United_W.md" style="color:black">Nikita Parris - Manchester United</a>
+- <a href="wingers_Bethany_Mead_Arsenal_WFC.md" style="color:black">Beth Mead - Arsenal</a>
 
 <div style="page-break-before: always; break-before: page;"></div>
 

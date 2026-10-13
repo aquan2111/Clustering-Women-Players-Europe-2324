@@ -247,9 +247,9 @@ Further clustering of each type of midfielders (Defensive/Center/Attacking) will
 
 The further clustering of each type is in its own file:
 
-- <a href="center_midfields_defensive.pdf" style="color:black">Defensive midfielders</a> (k = 3 cluster 2)
-- <a href="center_midfields_center.pdf" style="color:black">Center midfielders</a> (k = 3 cluster 1)
-- <a href="center_midfields_attacking.pdf" style="color:black">Attacking midfielders</a> (k = 3 cluster 0)
+- <a href="center_midfields_defensive.md" style="color:black">Defensive midfielders</a> (k = 3 cluster 2)
+- <a href="center_midfields_center.md" style="color:black">Center midfielders</a> (k = 3 cluster 1)
+- <a href="center_midfields_attacking.md" style="color:black">Attacking midfielders</a> (k = 3 cluster 0)
 
 <div style="page-break-before: always; break-before: page;"></div>
 

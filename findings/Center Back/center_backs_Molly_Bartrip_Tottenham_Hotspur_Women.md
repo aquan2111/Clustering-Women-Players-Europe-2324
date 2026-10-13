@@ -1,6 +1,6 @@
 # **Molly Bartrip - Tottenham Hotspur**
 
-<div align="left"><a href="center_backs.pdf" style="color:black">← Back to Center Backs</a></div>
+<div align="left"><a href="center_backs.md" style="color:black">← Back to Center Backs</a></div>
 
 <a id="table-of-contents"></a>
 

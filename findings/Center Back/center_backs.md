@@ -14,12 +14,12 @@
     - <a href="#comparing-results-for-2-clusters-against-3-clusters" style="color:black">Comparing results for 2 clusters against 3 clusters</a>
     - <a href="#results-for-3-clusters-breakdown-of-results-by-features" style="color:black">Breakdown of results by features</a>
   - <a href="#breakdown-of-results-by-players" style="color:black">Breakdown of results by players</a>
-    - <a href="center_backs_Molly_Bartrip_Tottenham_Hotspur_Women.pdf" style="color:black">Molly Bartrip - Tottenham Hotspur</a>
-    - <a href="center_backs_Elba_Verges_Prats_SD_Eibar.pdf" style="color:black">Elba Verges Prats - SD Eibar</a>
-    - <a href="center_backs_Kathrin_Julia_Hendrich_VfL_Wolfsburg_WFC.pdf" style="color:black">Kathy Hendrich - VfL Wolfsburg</a>
-    - <a href="center_backs_Sophie_Howard_Leicester_City_WFC.pdf" style="color:black">Sophie Howard - Leicester City</a>
-    - <a href="center_backs_Risa_Shimizu_West_Ham_United_LFC.pdf" style="color:black">Risa Shimizu - West Ham United</a>
-    - <a href="center_backs_Alex_Greenwood_Manchester_City_WFC.pdf" style="color:black">Alex Greenwood - Manchester City</a>
+    - <a href="center_backs_Molly_Bartrip_Tottenham_Hotspur_Women.md" style="color:black">Molly Bartrip - Tottenham Hotspur</a>
+    - <a href="center_backs_Elba_Verges_Prats_SD_Eibar.md" style="color:black">Elba Verges Prats - SD Eibar</a>
+    - <a href="center_backs_Kathrin_Julia_Hendrich_VfL_Wolfsburg_WFC.md" style="color:black">Kathy Hendrich - VfL Wolfsburg</a>
+    - <a href="center_backs_Sophie_Howard_Leicester_City_WFC.md" style="color:black">Sophie Howard - Leicester City</a>
+    - <a href="center_backs_Risa_Shimizu_West_Ham_United_LFC.md" style="color:black">Risa Shimizu - West Ham United</a>
+    - <a href="center_backs_Alex_Greenwood_Manchester_City_WFC.md" style="color:black">Alex Greenwood - Manchester City</a>
 - <a href="#appendix" style="color:black">Appendix</a>
   - <a href="#radar-plots-for-2-clusters-center-backs-averages" style="color:black">Radar plots for 2 clusters center backs' averages</a>
     - <a href="#radar-plots-for-2-clusters-center-backs-averages-all-leagues" style="color:black">All leagues</a>
@@ -255,12 +255,12 @@ However, these results are not stable as number of components are added, so resu
 
 Findings and radar plots for each center back are in their own files:
 
-- <a href="center_backs_Molly_Bartrip_Tottenham_Hotspur_Women.pdf" style="color:black">Molly Bartrip - Tottenham Hotspur</a>
-- <a href="center_backs_Elba_Verges_Prats_SD_Eibar.pdf" style="color:black">Elba Verges Prats - SD Eibar</a>
-- <a href="center_backs_Kathrin_Julia_Hendrich_VfL_Wolfsburg_WFC.pdf" style="color:black">Kathy Hendrich - VfL Wolfsburg</a>
-- <a href="center_backs_Sophie_Howard_Leicester_City_WFC.pdf" style="color:black">Sophie Howard - Leicester City</a>
-- <a href="center_backs_Risa_Shimizu_West_Ham_United_LFC.pdf" style="color:black">Risa Shimizu - West Ham United</a>
-- <a href="center_backs_Alex_Greenwood_Manchester_City_WFC.pdf" style="color:black">Alex Greenwood - Manchester City</a>
+- <a href="center_backs_Molly_Bartrip_Tottenham_Hotspur_Women.md" style="color:black">Molly Bartrip - Tottenham Hotspur</a>
+- <a href="center_backs_Elba_Verges_Prats_SD_Eibar.md" style="color:black">Elba Verges Prats - SD Eibar</a>
+- <a href="center_backs_Kathrin_Julia_Hendrich_VfL_Wolfsburg_WFC.md" style="color:black">Kathy Hendrich - VfL Wolfsburg</a>
+- <a href="center_backs_Sophie_Howard_Leicester_City_WFC.md" style="color:black">Sophie Howard - Leicester City</a>
+- <a href="center_backs_Risa_Shimizu_West_Ham_United_LFC.md" style="color:black">Risa Shimizu - West Ham United</a>
+- <a href="center_backs_Alex_Greenwood_Manchester_City_WFC.md" style="color:black">Alex Greenwood - Manchester City</a>
 
 <div style="page-break-before: always; break-before: page;"></div>
 

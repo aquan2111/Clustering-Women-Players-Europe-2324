@@ -14,13 +14,13 @@
     - <a href="#comparing-results-for-2-clusters-against-3-clusters" style="color:black">Comparing results for 2 clusters against 3 clusters</a>
     - <a href="#results-for-3-clusters-breakdown-of-results-by-features" style="color:black">Breakdown of results by features</a>
   - <a href="#breakdown-of-results-by-players" style="color:black">Breakdown of results by players</a>
-    - <a href="full_wing_backs_Ona_Batlle_Pascual_Barcelona_WFC.pdf" style="color:black">Ona Batlle - Barcelona</a>
-    - <a href="full_wing_backs_Eve_Perisset_Chelsea_FCW.pdf" style="color:black">Eve Perisset - Chelsea</a>
-    - <a href="full_wing_backs_Frederike_Kempe_RB_Leipzig_W.pdf" style="color:black">Frederike Kempe - RB Leipzig</a>
-    - <a href="full_wing_backs_Jayde_Yuk_Fun_Riviere_Manchester_United_W.pdf" style="color:black">Jayde Riviere - Manchester United</a>
-    - <a href="full_wing_backs_Sofie_Svava_Real_Madrid_CF_W.pdf" style="color:black">Sofie Svava - Real Madrid</a>
-    - <a href="full_wing_backs_Lucy_Bronze_Barcelona_WFC.pdf" style="color:black">Lucy Bronze - Barcelona</a>
-    - <a href="full_wing_backs_Katie_McCabe_Arsenal_WFC.pdf" style="color:black">Katie McCabe - Arsenal</a>
+    - <a href="full_wing_backs_Ona_Batlle_Pascual_Barcelona_WFC.md" style="color:black">Ona Batlle - Barcelona</a>
+    - <a href="full_wing_backs_Eve_Perisset_Chelsea_FCW.md" style="color:black">Eve Perisset - Chelsea</a>
+    - <a href="full_wing_backs_Frederike_Kempe_RB_Leipzig_W.md" style="color:black">Frederike Kempe - RB Leipzig</a>
+    - <a href="full_wing_backs_Jayde_Yuk_Fun_Riviere_Manchester_United_W.md" style="color:black">Jayde Riviere - Manchester United</a>
+    - <a href="full_wing_backs_Sofie_Svava_Real_Madrid_CF_W.md" style="color:black">Sofie Svava - Real Madrid</a>
+    - <a href="full_wing_backs_Lucy_Bronze_Barcelona_WFC.md" style="color:black">Lucy Bronze - Barcelona</a>
+    - <a href="full_wing_backs_Katie_McCabe_Arsenal_WFC.md" style="color:black">Katie McCabe - Arsenal</a>
 - <a href="#appendix" style="color:black">Appendix</a>
   - <a href="#radar-plots-for-2-clusters-full-wing-backs-averages" style="color:black">Radar plots for 2 clusters full/wing backs' averages</a>
     - <a href="#radar-plots-for-2-clusters-full-wing-backs-averages-all-leagues" style="color:black">All leagues</a>
@@ -252,13 +252,13 @@ Hence, the following conclusions can be made:
 
 Findings and radar plots for each full/wing back are in their own files:
 
-- <a href="full_wing_backs_Ona_Batlle_Pascual_Barcelona_WFC.pdf" style="color:black">Ona Batlle - Barcelona</a>
-- <a href="full_wing_backs_Eve_Perisset_Chelsea_FCW.pdf" style="color:black">Eve Perisset - Chelsea</a>
-- <a href="full_wing_backs_Frederike_Kempe_RB_Leipzig_W.pdf" style="color:black">Frederike Kempe - RB Leipzig</a>
-- <a href="full_wing_backs_Jayde_Yuk_Fun_Riviere_Manchester_United_W.pdf" style="color:black">Jayde Riviere - Manchester United</a>
-- <a href="full_wing_backs_Sofie_Svava_Real_Madrid_CF_W.pdf" style="color:black">Sofie Svava - Real Madrid</a>
-- <a href="full_wing_backs_Lucy_Bronze_Barcelona_WFC.pdf" style="color:black">Lucy Bronze - Barcelona</a>
-- <a href="full_wing_backs_Katie_McCabe_Arsenal_WFC.pdf" style="color:black">Katie McCabe - Arsenal</a>
+- <a href="full_wing_backs_Ona_Batlle_Pascual_Barcelona_WFC.md" style="color:black">Ona Batlle - Barcelona</a>
+- <a href="full_wing_backs_Eve_Perisset_Chelsea_FCW.md" style="color:black">Eve Perisset - Chelsea</a>
+- <a href="full_wing_backs_Frederike_Kempe_RB_Leipzig_W.md" style="color:black">Frederike Kempe - RB Leipzig</a>
+- <a href="full_wing_backs_Jayde_Yuk_Fun_Riviere_Manchester_United_W.md" style="color:black">Jayde Riviere - Manchester United</a>
+- <a href="full_wing_backs_Sofie_Svava_Real_Madrid_CF_W.md" style="color:black">Sofie Svava - Real Madrid</a>
+- <a href="full_wing_backs_Lucy_Bronze_Barcelona_WFC.md" style="color:black">Lucy Bronze - Barcelona</a>
+- <a href="full_wing_backs_Katie_McCabe_Arsenal_WFC.md" style="color:black">Katie McCabe - Arsenal</a>
 
 <div style="page-break-before: always; break-before: page;"></div>
 

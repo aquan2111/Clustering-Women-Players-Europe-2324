@@ -14,11 +14,11 @@
     - <a href="#comparing-results-for-2-clusters-against-3-clusters" style="color:black">Comparing results for 2 clusters against 3 clusters</a>
     - <a href="#results-for-3-clusters-breakdown-of-results-by-features" style="color:black">Breakdown of results by features</a>
   - <a href="#breakdown-of-results-by-players" style="color:black">Breakdown of results by players</a>
-    - <a href="center_midfields_center_Manuela_Giugliano_AS_Roma_W.pdf" style="color:black">Manuela Giugliano - AS Roma</a>
-    - <a href="center_midfields_center_Sjoeke_Nüsken_Chelsea_FCW.pdf" style="color:black">Sjoeke Nusken - Chelsea</a>
-    - <a href="center_midfields_center_Melanie_Leupolz_Chelsea_FCW.pdf" style="color:black">Melanie Leupolz - Chelsea</a>
-    - <a href="center_midfields_center_Missy_Bo_Kearns_Liverpool_WFC.pdf" style="color:black">Missy Bo Kearns - Liverpool</a>
-    - <a href="center_midfields_center_Lena_Oberdorf_VfL_Wolfsburg_WFC.pdf" style="color:black">Lena Oberdorf - VfL Wolfsburg</a>
+    - <a href="center_midfields_center_Manuela_Giugliano_AS_Roma_W.md" style="color:black">Manuela Giugliano - AS Roma</a>
+    - <a href="center_midfields_center_Sjoeke_Nüsken_Chelsea_FCW.md" style="color:black">Sjoeke Nusken - Chelsea</a>
+    - <a href="center_midfields_center_Melanie_Leupolz_Chelsea_FCW.md" style="color:black">Melanie Leupolz - Chelsea</a>
+    - <a href="center_midfields_center_Missy_Bo_Kearns_Liverpool_WFC.md" style="color:black">Missy Bo Kearns - Liverpool</a>
+    - <a href="center_midfields_center_Lena_Oberdorf_VfL_Wolfsburg_WFC.md" style="color:black">Lena Oberdorf - VfL Wolfsburg</a>
 - <a href="#appendix" style="color:black">Appendix</a>
   - <a href="#radar-plots-for-2-clusters-center-midfields-averages" style="color:black">Radar plots for 2 clusters center midfields' averages</a>
     - <a href="#radar-plots-for-2-clusters-center-midfields-averages-all-leagues" style="color:black">All leagues</a>
@@ -252,11 +252,11 @@ Hence, the following conclusions can be made:
 
 Findings and radar plots for each center midfielder are in their own files:
 
-- <a href="center_midfields_center_Manuela_Giugliano_AS_Roma_W.pdf" style="color:black">Manuela Giugliano - AS Roma</a>
-- <a href="center_midfields_center_Sjoeke_Nüsken_Chelsea_FCW.pdf" style="color:black">Sjoeke Nusken - Chelsea</a>
-- <a href="center_midfields_center_Melanie_Leupolz_Chelsea_FCW.pdf" style="color:black">Melanie Leupolz - Chelsea</a>
-- <a href="center_midfields_center_Missy_Bo_Kearns_Liverpool_WFC.pdf" style="color:black">Missy Bo Kearns - Liverpool</a>
-- <a href="center_midfields_center_Lena_Oberdorf_VfL_Wolfsburg_WFC.pdf" style="color:black">Lena Oberdorf - VfL Wolfsburg</a>
+- <a href="center_midfields_center_Manuela_Giugliano_AS_Roma_W.md" style="color:black">Manuela Giugliano - AS Roma</a>
+- <a href="center_midfields_center_Sjoeke_Nüsken_Chelsea_FCW.md" style="color:black">Sjoeke Nusken - Chelsea</a>
+- <a href="center_midfields_center_Melanie_Leupolz_Chelsea_FCW.md" style="color:black">Melanie Leupolz - Chelsea</a>
+- <a href="center_midfields_center_Missy_Bo_Kearns_Liverpool_WFC.md" style="color:black">Missy Bo Kearns - Liverpool</a>
+- <a href="center_midfields_center_Lena_Oberdorf_VfL_Wolfsburg_WFC.md" style="color:black">Lena Oberdorf - VfL Wolfsburg</a>
 
 <div style="page-break-before: always; break-before: page;"></div>
 
